@@ -1,6 +1,6 @@
 import time
 from pages.base_page import BasePage
-from .locators import DiscoveryPageLocators
+from locators import DiscoveryPageLocators
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import Select
 

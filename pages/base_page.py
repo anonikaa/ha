@@ -3,8 +3,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException, TimeoutException
 from selenium.common.exceptions import NoAlertPresentException
 from selenium.webdriver.support.wait import WebDriverWait
-from .locators import BasePageLocators
-from .locators import HomePageLocators
+from locators import BasePageLocators
+from locators import HomePageLocators
 
 class BasePage:
 
@@ -24,6 +24,7 @@ class BasePage:
         except NoSuchElementException:
             return False
         return True
+
 #закрываем nps скор, чтобы он не перекрывал элементы
     def close_nps(self): #здесь надо переписать на то, что если элемент покажется - закрыть его, если нет, то просто скип
         nps_close = self.browser.find_element(*HomePageLocators.NPS_CLOSE)

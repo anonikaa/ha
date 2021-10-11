@@ -1,5 +1,5 @@
 from .base_page import BasePage
-from .locators import SettingsPageLocators
+from locators import SettingsPageLocators
 
 
 class SettingsPage(BasePage):
