@@ -2,10 +2,11 @@ from pages.home_page import HomePage
 from pages.discovery_page import DiscoveryPage
 from pages.login_page import LoginPage
 from pages.settings_page import SettingsPage
+from credentials import Links
 import time
 
 def test_it_is_free_account(browser):
-    link = "https://hypeauditor.com/login"
+    link = Links.login_link
     page = LoginPage(browser, link)
     page.open_page()
     page.login_free_account()
@@ -18,7 +19,7 @@ def test_it_is_free_account(browser):
     settings_page.should_be_free_account()
 
 def test_basic_paywall(browser):
-    link = "https://hypeauditor.com/login"
+    link = Links.login_link
     page = LoginPage(browser, link)
     page.open_page()
     page.login_free_account()
@@ -33,7 +34,7 @@ def test_basic_paywall(browser):
 
 
 def test_basic_and_pro_paywall_ig(browser):
-    link = "https://hypeauditor.com/login"
+    link = Links.login_link
     page = LoginPage(browser, link)
     page.open_page()
     page.login_free_account()

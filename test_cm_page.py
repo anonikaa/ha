@@ -3,9 +3,10 @@ import time
 from pages.cm_page import CMPage
 from pages.home_page import HomePage
 from pages.login_page import LoginPage
+from credentials import Links
 
 def test_show_mini_landing_cm(browser):
-    link = "https://hypeauditor.com/login/"
+    link = Links.login_link
     page = LoginPage(browser, link)
     page.open_page()
     page.login_empty_cm_mp()
@@ -17,7 +18,7 @@ def test_show_mini_landing_cm(browser):
     cm_page.should_be_cm_mini_landing()
 
 def test_show_lists_of_campaings(browser):
-    link = "https://hypeauditor.com/login/"
+    link = Links.login_link
     page = LoginPage(browser, link)
     page.open_page()
     page.login_free_account()

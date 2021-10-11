@@ -1,16 +1,18 @@
 import time
 from pages.login_page import LoginPage
 from pages.home_page import HomePage
+from credentials import Links
 
 
 def test_is_this_login_page(browser):
-    link = "https://hypeauditor.com/login/"
+
+    link = Links.login_link
     page = LoginPage(browser, link)
     page.open_page()
     page.should_be_login_page()
 
 def test_login(browser):
-    link = "https://hypeauditor.com/login/"
+    link = Links.login_link
     page = LoginPage(browser, link)
     page.open_page()
     page.input_correct_login()
@@ -21,7 +23,7 @@ def test_login(browser):
     home_page.should_be_home_page()
 
 def test_wrong_email(browser):
-    link = "https://hypeauditor.com/login/"
+    link = Links.login_link
     page = LoginPage(browser, link)
     page.open_page()
     page.input_wrong_email()
@@ -30,7 +32,7 @@ def test_wrong_email(browser):
     page.should_be_wrong_pass_warning()
 
 def test_wrong_password(browser):
-    link = "https://hypeauditor.com/login/"
+    link = Links.login_link
     page = LoginPage(browser, link)
     page.open_page()
     page.input_correct_login()
